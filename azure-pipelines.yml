@@ -24,6 +24,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
+      cd codeql-bundle-linux64/codeql
       ./codeql init \
       --repository pritishswain/DevOpsPOC \
       --github-url https://github.com \
