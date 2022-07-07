@@ -25,10 +25,10 @@ steps:
     script: |
       cd codeql
       ./codeql database init \
-      --repository pritishswain/DevOpsPOC \
+      --repository= pritishswain/DevOpsPOC \
       --source-root=DevOpsPOC
-      --github-url https://github.com \
-      --github-auth $GITHUB_PAT \
+      --github-url= https://github.com \
+      --github-auth =$GITHUB_PAT \
 
 
 - task: Maven@3
