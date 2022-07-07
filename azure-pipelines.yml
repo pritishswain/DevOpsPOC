@@ -24,8 +24,9 @@ steps:
     targetType: 'inline'
     script: |
       cd codeql
-      ./codeql init \
+      ./codeql database init \
       --repository pritishswain/DevOpsPOC \
+      --source-root=DevOpsPOC
       --github-url https://github.com \
       --github-auth $GITHUB_PAT \
 
