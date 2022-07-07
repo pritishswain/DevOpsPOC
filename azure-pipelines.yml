@@ -10,6 +10,24 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      wget https: //github. com/github/codeql-action/releases/latest/download/codeql-runner-linux
+      chmod +x. codeql -runner- Linux
+      displayname:'Get latest CodeQl package. Install -on Agent.'
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      ./codeql-runner-linux init \
+      --repository pritishswain/DevOpsPOC \
+      --github-url https://github.com \
+      --github-auth $GITHUB_PAT \
+
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -20,6 +38,18 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      ./codeql-runner-linux analyze \
+      --repository pritishswain/DevOpsPOC \
+      --github-url https://github.com \
+      --github-auth $GITHUB_PAT \
+      --commit $(Build.SourceVersion) \
+      --ref $(Build.SourceBranch) \
+
 - task: CopyFiles@2
   inputs:
     Contents: '**/*.war'
