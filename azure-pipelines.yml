@@ -25,7 +25,7 @@ steps:
     targetType: 'inline'
     script: |
       cd codeql-bundle-linux64/codeql
-      ./codeql init \
+      ./codeql.sh init \
       --repository pritishswain/DevOpsPOC \
       --github-url https://github.com \
       --github-auth $GITHUB_PAT \
