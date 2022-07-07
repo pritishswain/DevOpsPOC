@@ -24,7 +24,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      ./codeql-runner-linux init \
+      ./codeql init \
       --repository pritishswain/DevOpsPOC \
       --github-url https://github.com \
       --github-auth $GITHUB_PAT \
@@ -45,7 +45,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      ./codeql-runner-linux analyze \
+      ./codeql analyze \
       --repository pritishswain/DevOpsPOC \
       --github-url https://github.com \
       --github-auth $GITHUB_PAT \
