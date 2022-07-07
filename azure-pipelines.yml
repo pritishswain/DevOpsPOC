@@ -15,8 +15,8 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      wget https://github.com/github/codeql-action/releases/latest/download/codeql-runner-linux
-      chmod +x. codeql -runner- Linux
+      wget https://github.com/github/codeql.git
+      chmod +x codeql
 
 - task: Bash@3
   inputs:
