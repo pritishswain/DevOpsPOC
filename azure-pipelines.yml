@@ -17,7 +17,7 @@ steps:
     script: |
       wget https: //github. com/github/codeql-action/releases/latest/download/codeql-runner-linux
       chmod +x. codeql -runner- Linux
-      displayname:'Get latest CodeQl package. Install -on Agent.'
+
 - task: Bash@3
   inputs:
     targetType: 'inline'
