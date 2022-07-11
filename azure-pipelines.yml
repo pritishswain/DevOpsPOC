@@ -25,7 +25,7 @@ steps:
     script: |
       codeql database create /codeql-dbs/DevOpsPOC --language=java \
           --source-root https://github.com/pritishswain/DevOpsPOC.git
-    workingDirectory: '$(WorkingDirectory)/codeql'
+    workingDirectory: 'codeql'
 
 
 
