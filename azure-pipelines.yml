@@ -23,12 +23,8 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      cd codeql
-      ./codeql.sh init \
-      --source-root= /DevOpsPOC \
-      --language= java \
-      --github-auth= $GITHUB_PAT \
-      --github-url= https://github.com/pritishswain/DevOpsPOC \
+      codeql database create /codeql-dbs/DevOpsPOC --language=java \
+          --source-root https://github.com/pritishswain/DevOpsPOC.git
 
 
 
