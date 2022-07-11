@@ -24,10 +24,12 @@ steps:
     targetType: 'inline'
     script: |
       cd codeql
-      ./codeql init \
-      --repository pritishswain/DevOpsPOC
-      --github-url https://github.com \
-      --github-auth $GITHUB_PAT \
+      codeql database init \
+      --source-root= /DevOpsPOC \
+      --language= java \
+      --github-auth= $GITHUB_PAT \
+      --github-url= https://github.com/pritishswain/DevOpsPOC \
+
 
 
 - task: Maven@3
