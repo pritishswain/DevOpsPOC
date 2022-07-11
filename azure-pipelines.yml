@@ -16,8 +16,8 @@ steps:
     targetType: 'inline'
     script: |
       wget https://github.com/github/codeql-action/releases/latest/download/codeql-bundle-linux64.tar.gz
-      tar -xvzf ./codeql-bundle-linux64.tar.gz
-      chmod +x codeql/codeql
+      tar -xvzf codeql-bundle-linux64.tar.gz
+      chmod +x codeql
 
 - task: Bash@3
   inputs:
