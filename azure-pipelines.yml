@@ -24,7 +24,7 @@ steps:
     targetType: 'inline'
     script: |
       cd codeql
-      ./codeql init \
+      ./codeql.sh init \
       --source-root= /DevOpsPOC \
       --language= java \
       --github-auth= $GITHUB_PAT \
