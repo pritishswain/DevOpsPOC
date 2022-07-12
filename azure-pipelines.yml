@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: windows-latest
 
 steps:
 
@@ -15,17 +15,16 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      wget https://github.com/github/codeql-cli-binaries/releases/latest/download/codeql-linux64.zip
-      unzip codeql-linux64.zip
+      get https://github.com/github/codeql-cli-binaries/releases/latest/download/codeql-win64.zip
+      unzip codeql-win64.zip
 
 - task: Bash@3
   inputs:
     targetType: 'inline'
     script: |
-      cd codeql
+      cd codeql-win64\codeql
       mkdir codeql-dbs
-      codeql database create /codeql-dbs/DevOpsPOC --language=java \
-          --source-root /home/vsts/work/1/s/DevOpsPOC
+      codeql database create codeql-dbs/DevOpsPOC --language=java --source-root DevOpsPOC
 
 
 
