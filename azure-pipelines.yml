@@ -22,7 +22,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      cd codeql-linux64/codeql
+      cd codeql
       mkdir codeql-dbs
       codeql database create /codeql-dbs/DevOpsPOC --language=java \
           --source-root /home/vsts/work/1/s/DevOpsPOC
