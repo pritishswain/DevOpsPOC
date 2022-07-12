@@ -17,13 +17,12 @@ steps:
     script: |
       wget https://github.com/github/codeql-cli-binaries/releases/latest/download/codeql-linux64.zip
       unzip codeql-linux64.zip
-      chmod +x codeql/codeql
+      chmod +x codeql-linux64/codeql/codeql
 
 - task: Bash@3
   inputs:
     targetType: 'inline'
     script: |
-      cd codeql
       codeql database create /codeql-dbs/DevOpsPOC --language=java \
           --source-root https://github.com/pritishswain/DevOpsPOC.git
     
