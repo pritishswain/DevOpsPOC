@@ -15,7 +15,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      Invoke-WebRequest https://github.com/github/codeql-cli-binaries/releases/latest/download/codeql-win64.zip
+      WGET https://github.com/github/codeql-cli-binaries/releases/latest/download/codeql-win64.zip
       unzip codeql-win64.zip
 
 - task: Bash@3
